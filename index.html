@@ -873,7 +873,7 @@ input:checked + .slider:before { transform: translateX(20px); background-color: 
 
 <section id="boot-layer" aria-label="System Boot Sequence">
   <div id="boot-content">
-    <h1 class="boot-logo">CINE-OS</h1>
+    <h1 class="boot-logo">NEBULAHUB</h1>
     <p class="boot-sub">Cine-Hub Softwares // V2</p>
     <button id="boot-btn" onclick="startBootSequence()" tabindex="1">Enter CINE</button>
     <div class="boot__hint">Double-Tap ENTER to skip sequence</div>
@@ -1034,7 +1034,7 @@ input:checked + .slider:before { transform: translateX(20px); background-color: 
 <aside id="ciri-window" aria-label="Ciri AI Assistant">
   <div id="ciri-boot-screen">
     <div id="boot-ciri-text" class="boot-ciri">CIRI.</div>
-    <div id="boot-sub-text" class="boot-sub">Cine-Hub SOFTWARES</div>
+    <div id="boot-sub-text" class="boot-sub">NebulaHub SOFTWARES</div>
     <div id="boot-loader" class="boot-loader">
       <div id="boot-spinner" class="spinner"></div>
       <div id="boot-status-text" class="boot-status">Connecting To Gemini...</div>
@@ -1191,7 +1191,7 @@ input:checked + .slider:before { transform: translateX(20px); background-color: 
       <div class="config__text"><strong>Tab Cloak</strong><small>Disguises the OS tab name and icon</small></div>
     </div>
     <select class="config__select" id="cloak-select" onchange="window.parent.updateCloak(this.value)">
-      <option value="none">None (Cine-OS)</option>
+      <option value="none">None (NebulaHub)</option>
       <option value="google">Google</option>
       <option value="drive">Google Drive</option>
       <option value="canvas">Canvas</option>
@@ -1229,10 +1229,10 @@ var _SYSTEM_PATHS = ["C:/Windows/System32/kernel32.dll", "/var/www/html/cine-os/
 var _devBuildVer = "3.0.1";
 
 var APPS = {
-    'cine': {title: 'CINE // HUB', path: 'script/Apps/Cine/index.html', icon: 'https://cdn.worldvectorlogo.com/logos/netflix-logo-icon.svg', pinned: true},
+    'cine': {title: 'NEBULA // HUB', path: 'script/Apps/Cine/index.html', icon: 'https://cdn.worldvectorlogo.com/logos/netflix-logo-icon.svg', pinned: true},
     'term': {title: 'Spotify', path: 'script/Apps/Spotify/index.html', icon: 'https://cdn.pixabay.com/photo/2016/10/22/00/15/spotify-1759471_1280.jpg', pinned: true},
     'files': {title: 'PS5 Emu', path: 'script/Apps/Ps5/index.html', icon: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-OeL_be7RFaoHi3PswkuAR5XcMgBNRDynsg&s', pinned: true},
-    'web': {title: 'Cine-Web', path: 'script/Apps/Web/index.html', icon: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeD89ZcX5W1FBtal7RerasT27q-OmZqnBixQ&s', pinned: true},
+    'web': {title: 'Nebula-Web', path: 'script/Apps/Web/index.html', icon: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeD89ZcX5W1FBtal7RerasT27q-OmZqnBixQ&s', pinned: true},
     'settings': {title: 'CONFIG', internal: true, icon: 'https://cdn.iconscout.com/icon/free/png-256/free-apple-settings-icon-svg-download-png-493162.png', pinned: true},
     'discord': {title: 'Discord', path: 'script/Apps/Discord/index.html', icon: 'https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png', pinned: false},
     'roblox': {title: 'Roblox', path: 'script/Apps/Roblox/index.html', icon: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9KvNyFWMg_bjo_q_1IVLKFWbfCeonn2qDow&s', pinned: false},
@@ -1245,7 +1245,7 @@ var APPS = {
     'RocketL': {title: 'Rocket League', path: 'script/Apps/RocketL/index.html', icon: 'https://ygo-assets-entities-us.yougov.net/87bb7a16-2b62-11e8-82b1-37bb0d207ced.jpg?zcw=518&zch=518&zct=10&zcl=0', pinned: false},
 };
 
-var savedPins = localStorage.getItem('c_pins_v2');
+var savedPins = localStorage.getItem('nebula_pins_v2');
 if(savedPins) {
     let p = JSON.parse(savedPins);
     for(let k in p) {
@@ -1256,7 +1256,7 @@ if(savedPins) {
 function syncPins() {
     let obj = {};
     for(let k in APPS) obj[k] = APPS[k].pinned;
-    localStorage.setItem('c_pins_v2', JSON.stringify(obj));
+    localStorage.setItem('nebula_pins_v2', JSON.stringify(obj));
 }
 
 var wallpaperRegistry = {
@@ -1281,7 +1281,7 @@ var wallpaperRegistry = {
     "sukuna-fire": {id: "sukuna-fire", name: "Sukuna Fire", url: "Videos/sukuna-fire.mp4", locked: false}
 };
 
-var sysConfig = JSON.parse(localStorage.getItem('cine_sys_config')) || {};
+var sysConfig = JSON.parse(localStorage.getItem('nebula_sys_config')) || {};
 if(sysConfig.optBg === undefined) sysConfig.optBg = false;
 if(sysConfig.shortBoot === undefined) sysConfig.shortBoot = false;
 if(sysConfig.wpLoop === undefined) sysConfig.wpLoop = false;
@@ -1294,13 +1294,13 @@ if(!sysConfig.cloak) sysConfig.cloak = 'none';
 
 window.updateSysSetting = function(key, value) {
     sysConfig[key] = value;
-    localStorage.setItem('cine_sys_config', JSON.stringify(sysConfig));
+    localStorage.setItem('nebula_sys_config', JSON.stringify(sysConfig));
     if(key === 'optBg') applySystemSettings();
     if(key === 'wpLoop') updateWallpaperLoop();
 };
 
 var cloaks = {
-    none: {title: "Cine-OS", icon: ""},
+    none: {title: "NebulaHub", icon: ""},
     google: {title: "Google", icon: "https://www.google.com/favicon.ico"},
     drive: {title: "My Drive - Google Drive", icon: "https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png"},
     canvas: {title: "Dashboard", icon: "https://du11hjcvx0uqb.cloudfront.net/br/dist/images/favicon-e10d657a73.ico"},
@@ -1309,7 +1309,7 @@ var cloaks = {
 
 window.updateCloak = function(key) {
     sysConfig.cloak = key;
-    localStorage.setItem('cine_sys_config', JSON.stringify(sysConfig));
+    localStorage.setItem('nebula_sys_config', JSON.stringify(sysConfig));
     applyCloak();
 };
 
@@ -1327,7 +1327,7 @@ function applyCloak() {
         n.href = sel.icon;
         document.getElementsByTagName('head')[0].appendChild(n);
     } else {
-        document.title = "Cine-OS";
+        document.title = "NebulaHub";
     }
 }
 setInterval(applyCloak, 2000);
@@ -1543,7 +1543,7 @@ window.unlockSystem = function() {
             if(bV.style.display !== 'none') bV.play().catch(function(e){});
         }
         if(!welcomeShown) {
-            showNotification("Welcome To Cine V2", "Checkout Settings for FAQ!");
+            showNotification("Welcome To NebulaHub", "Checkout Settings for FAQ!");
             welcomeShown = true;
         }
     }, 600);
@@ -1802,7 +1802,7 @@ function openWindow(id) {
                     <div class="setting-card">
                         <div class="setting-text"><b>Tab Cloaking</b><small>Disguises OS as another site</small></div>
                         <select id="cloak-select" onchange="window.parent.updateCloak(this.value)">
-                            <option value="none">None (Cine-OS)</option>
+                            <option value="none">None (NebulaHub)</option>
                             <option value="google">Google</option>
                             <option value="drive">Google Drive</option>
                             <option value="canvas">Canvas</option>
@@ -1906,10 +1906,10 @@ document.addEventListener('mouseover', function(e) {
     }
 });
 
-var desktopLayout = JSON.parse(localStorage.getItem('cine_desktop_v2')) || [];
+var desktopLayout = JSON.parse(localStorage.getItem('nebula_desktop_v2')) || [];
 
 function saveDesktop() {
-    localStorage.setItem('cine_desktop_v2', JSON.stringify(desktopLayout));
+    localStorage.setItem('nebula_desktop_v2', JSON.stringify(desktopLayout));
     loadDesktop();
 }
 
@@ -2199,7 +2199,7 @@ window.toggleDesktopSize = function(l) {
     document.getElementById('desktop-context-menu').style.display = 'none';
 };
 
-var unlockedWallpapers = JSON.parse(localStorage.getItem('cine_unlocked_wp')) || ['default'];
+var unlockedWallpapers = JSON.parse(localStorage.getItem('nebula_unlocked_wp')) || ['default'];
 window.wpMode = 'both';
 
 function setWallpaper(k, noti=false) {
@@ -2208,7 +2208,7 @@ function setWallpaper(k, noti=false) {
     
     if(noti && d.locked && !unlockedWallpapers.includes(d.id)) {
         unlockedWallpapers.push(d.id);
-        localStorage.setItem('cine_unlocked_wp', JSON.stringify(unlockedWallpapers));
+        localStorage.setItem('nebula_unlocked_wp', JSON.stringify(unlockedWallpapers));
         alert("Wallpaper: [ " + d.name + " ] Unlocked.");
     }
     
@@ -2588,7 +2588,7 @@ function chkFps() {
             fLC++;
             if(fLC >= 5 && !sysConfig.optBg) {
                 sysConfig.optBg = true;
-                localStorage.setItem('cine_sys_config', JSON.stringify(sysConfig));
+                localStorage.setItem('nebula_sys_config', JSON.stringify(sysConfig));
                 let bv = document.getElementById('bg-video');
                 let lv = document.getElementById('lock-video');
                 if(bv) bv.pause();
